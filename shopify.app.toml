@@ -1,0 +1,32 @@
+# Shopify App Configuration
+
+client_id = "fdee24972516fb2c69ae0a9760c1a02a"
+name = "Maisoonmaia-Final-Unique"
+application_url = "https://mailsgusto.gustoapp.net"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[access_scopes]
+scopes = "read_checkouts,read_draft_orders,read_marketing_events,write_draft_orders,write_marketing_events,write_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://mailsgusto.gustoapp.net/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2026-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/api/webhooks/app/uninstalled"
+
+[app_proxy]
+url = "https://mailsgusto.gustoapp.net"
+subpath = "cod"
+prefix = "apps"
+
+[pos]
+embedded = false
